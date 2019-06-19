@@ -420,8 +420,18 @@ nav {
   background: #eee;
   z-index: 500;
 }
+@media only screen and (max-width: 460px) {
+  nav {
+    display: none;
+  }
+}
 header {
   margin-top: 4rem;
+}
+@media only screen and (max-width: 460px) {
+  header {
+    margin-top: 0;
+  }
 }
 header h1 {
   background: linear-gradient(60deg, #2e0079, #0f0);
@@ -478,4 +488,26 @@ hr {
 .history li {
   list-style: square;
   margin-left: 3rem;
+}
+@media print {
+  body {
+    width: 100%;
+    background: #fff;
+  }
+  nav {
+    display: none;
+  }
+  header {
+    margin-top: 0;
+  }
+  header h1 {
+    color: #2e0079;
+  }
+  header h2 {
+    position: relative;
+    color: #018127;
+    text-transform: uppercase;
+    border-bottom: 0.25rem solid #373438;
+    box-shadow: none;
+  }
 }
