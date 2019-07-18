@@ -13,25 +13,23 @@
   <![endif]-->
 </head>
 
-<body class="u-margin-auto u-width-75">
+<body class="u-margin-auto">
   <nav class="u-fixed-top">
     <ul class="flex flex-justify-around flex-no-response">
       <li><a href="#intro">Introduction</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#history">Work History</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a href="https://mnichols08.github.io/LambdaSchools-Portfolio-Website/" target="_blank">Portfolio</a></li>
+      <li><a href="https://mikeynichols.dev" target="_blank">Portfolio</a></li>
     </ul>
   </nav>
   <header class="u-text-center">
-      <h1>Mikey Nichols</h1>
+    <h1 class="u-text-center">Mikey Nichols</h1>
       <h2>Full Stack Web Developer</h2>
-
   </header>
-  <main class="flex">
+  <main class="flex u-margin-auto u-width-75">
     <div class="flex flex-column flex-items-center">
-    <img src="img/flicker.jpg" alt="Mikey taking a photograph." class="snapshot">
-
+      <img src="img/flicker.jpg" alt="Mikey taking a photograph." class="snapshot">
     <div class="contact u-text-right" id="contact">
     <phone>
         <a href="tel:+12403219207">
@@ -55,13 +53,16 @@
     </div>
     <div class="flex flex-column flex-items-center">
       <p class="u-text-center">If you would like to collaborate on a project or employ my services please reach out!</p>
-      <a href="mailto:mikey@mnzen.com?subject=Let's%20code%20something!" class="button">Let's Code Something!</a>
+      <a href="mailto:mikey@mnzen.com?subject=Let's%20grab%20coffee!" class="button">Let's Grab Coffee!</a>
     </div>
      
       <section class="skills u-text-right u-width-100" id="skills">
           <hr>
           <h3>My Skillset Includes</h3>
             <ul>
+              <li>React</li>
+              <li>Redux</li>
+              <li>Tabletop.js</li>
               <li>AutoIT</li>
               <li>BigCommerce</li>
               <li>BootStrap</li>
@@ -260,15 +261,12 @@
 
 <footer class="u-text-center">
   <hr>
-  &copy;
-  <script>
-  document.write(new Date().getFullYear());
-  </script>
-   Mikey Nichols
-  </footer>
+  Copyright 1989 Mikey Nichols
+</footer>
 
   <script>
       {
+      document.querySelector('footer.u-text-center').innerHTML = `<hr> &copy; ${new Date().getFullYear()} Mikey Nichols`;
       let skillsArr = [],skills = document.querySelectorAll('#skills ul li'); 
       skills.forEach(function(e){skillsArr.push(e.innerHTML)});
       skillsArr.sort((a,b) => b.length - a.length);

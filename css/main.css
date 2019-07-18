@@ -348,7 +348,14 @@ email {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local('Fira Sans Extra Condensed Regular'), local('FiraSansExtraCondensed-Regular'), url(https://fonts.gstatic.com/s/firasansextracondensed/v3/NaPKcYDaAO5dirw6IaFn7lPJFqXmS-M9Atn3wgda1f-uvw.ttf) format('truetype');
+  src: local('Fira Sans Extra Condensed Regular'), local('FiraSansExtraCondensed-Regular'), url(https://fonts.gstatic.com/s/firasansextracondensed/v4/NaPKcYDaAO5dirw6IaFn7lPJFqXmS-M9Atn3wgda1f-uvw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Major Mono Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Major Mono Display Regular'), local('MajorMonoDisplay-Regular'), url(https://fonts.gstatic.com/s/majormonodisplay/v3/RWmVoLyb5fEqtsfBX9PDZIGr2tFubRh7DXeU.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Roboto Mono';
@@ -357,16 +364,29 @@ email {
   font-display: swap;
   src: local('Roboto Mono'), local('RobotoMono-Regular'), url(https://fonts.gstatic.com/s/robotomono/v6/L0x5DF4xlVMF-BfR8bXMIjhLq3o.ttf) format('truetype');
 }
+@font-face {
+  font-family: 'Seymour One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Seymour One'), local('SeymourOne'), url(https://fonts.gstatic.com/s/seymourone/v7/4iCp6Khla9xbjQpoWGGd0lyPN4Q.ttf) format('truetype');
+}
 html {
   font-family: 'Fira Sans Extra Condensed', sans-serif;
   font-size: 62.5%;
+  color: #aaa;
 }
 a {
-  color: black;
+  color: #ccc;
   transition: all 0.2s;
 }
 a:hover {
-  color: #2e0079;
+  color: green;
+}
+@media only screen {
+  svg {
+    filter: invert(1);
+  }
 }
 body {
   font-size: 1.6rem;
@@ -378,18 +398,22 @@ h4,
 h5,
 h6 {
   padding: 1rem 0;
+  letter-spacing: 3px;
 }
-h1,
+h1 {
+  font-family: "Major Mono Display", monospace;
+}
 h3,
 h5 {
-  font-family: "Roboto Mono", monospace;
+  font-family: 'Roboto Mono', monospace;
 }
 h1,
 h3 {
-  color: #018127;
+  color: #eee;
 }
 h1 {
-  font-size: 4rem;
+  font-size: 13vw;
+  transition: 1.5s all;
 }
 h2 {
   font-size: 3rem;
@@ -414,17 +438,16 @@ h6 {
 nav a {
   font-family: "Roboto Mono", monospace;
 }
+html {
+  background: linear-gradient(#1f1c21, #110c17);
+  background-attachment: fixed;
+}
 body {
-  background: linear-gradient(#eee, #fff);
+  height: 100vw;
   background-repeat: no-repeat;
 }
-@media only screen and (max-width: 460px) {
-  body {
-    background: #fff;
-  }
-}
 nav {
-  background: #eee;
+  background: #000000dd;
   z-index: 500;
 }
 @media only screen and (max-width: 460px) {
@@ -433,7 +456,10 @@ nav {
   }
 }
 header {
-  margin-top: 4rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 @media only screen and (max-width: 460px) {
   header {
@@ -441,20 +467,29 @@ header {
   }
 }
 header h1 {
-  background: linear-gradient(60deg, #2e0079, #0f0);
+  background: url(../img/code.jpg);
+  text-transform: uppercase;
+  background-attachment: fixed;
+  background-position: top;
+  background-repeat: none;
+  background-size: cover;
+  font-weight: 800;
   -webkit-background-clip: text;
   background-clip: text;
   display: inline-block;
   color: transparent;
+  filter: drop-shadow(0px 0px 3px #fff);
+  margin-top: -5%;
 }
 header h2 {
   position: absolute;
+  bottom: 0;
   left: 0;
   width: 100%;
-  background: #373438;
-  color: #fff;
+  background: #eee;
+  color: #333;
   text-transform: uppercase;
-  box-shadow: 0 1rem 1rem rgba(46, 0, 121, 0.5);
+  box-shadow: 0 3px 3px rgba(46, 0, 121, 0.3);
 }
 main {
   margin-top: 3em;
@@ -469,7 +504,7 @@ img.snapshot {
 }
 a.button {
   text-decoration: none;
-  background: #fff;
+  background: #ffffff6f;
   border: 1px solid #000;
   border-radius: 3pt;
   padding: 1rem;
@@ -484,8 +519,8 @@ a.button:active {
   transform: translateY(2px);
 }
 hr {
-  border-bottom: 0.25rem solid #373438;
-  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.5);
+  border-bottom: 3px solid #373438;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
 }
 @media only screen and (max-width: 900px) {
   .skills {
@@ -507,16 +542,31 @@ hr {
     display: none;
   }
   header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
     margin-top: 0;
   }
   header h1 {
-    color: #2e0079;
+    margin-top: 0;
+    font-size: 10rem;
+    color: #222;
+    font-family: 'Roboto Mono', monospace;
+    text-transform: none;
   }
   header h2 {
     position: relative;
-    color: #018127;
+    color: #555;
     text-transform: uppercase;
     border-bottom: 0.25rem solid #373438;
     box-shadow: none;
+  }
+  main.u-margin-auto {
+    margin-top: 17rem;
+  }
+  footer {
+    display: none;
   }
 }
