@@ -1,12 +1,18 @@
 html {
     font-family: 'Fira Sans Extra Condensed', sans-serif;
     font-size: 62.5%;
+    color: #aaa;
 }
 a {
     color: @links;
     .transition;
     &:hover {
         color: @links-hover;
+    }
+}
+@media only screen{
+    svg {
+        filter: invert(1);
     }
 }
 body{
@@ -16,17 +22,18 @@ h1,h2,h3,h4,h5,h6 {
     padding: 1rem 0;
     letter-spacing: 3px;
 }
-h1 {
-    font-family: 'Seymour One', sans-serif;
+h1{
+    font-family: "Major Mono Display", monospace;
 }
 h3,h5{
-    font-family: "Roboto Mono", monospace;
+    font-family: 'Roboto Mono', monospace;
 }
 h1, h3 {
-    color: #018127;
+    color: #eee;
 }
 h1{
-    font-size: 4rem;
+    font-size: 13vw;
+    transition: 1.5s all;
 }
 h2{
     font-size: 3rem;
